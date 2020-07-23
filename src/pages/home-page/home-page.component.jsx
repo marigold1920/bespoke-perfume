@@ -1,4 +1,9 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+
+import { selectToken } from "../../redux/user/user.selectors";
 
 import PopularPerfume from "../../components/popular-perfume/popular-perfume.component";
 import NewestPerfume from "../../components/newest-perfume/newest-perfume.component";
@@ -9,7 +14,8 @@ import "./home-page.styles.scss";
 
 class HomePage extends React.Component {
     render() {
-        return (
+        const { token } = this.props;
+        return token !== "" ? (
             <div className="home-page">
                 <div className="row">
                     <div className="left-box col-lg-3 col-sm-12">
@@ -22,8 +28,14 @@ class HomePage extends React.Component {
                     </div>
                 </div>
             </div>
+        ) : (
+            <Redirect to="/" />
         );
     }
 }
 
-export default HomePage;
+const mapStateToProps = createStructuredSelector({
+    token: selectToken,
+});
+
+export default connect(mapStateToProps)(HomePage);
