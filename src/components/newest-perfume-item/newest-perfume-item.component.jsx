@@ -2,7 +2,7 @@ import React from "react";
 
 import "./newest-perfume-item.styles.scss";
 
-const PopularPerfumeItem = ({ name, image, date }) => (
+const NewestPerfumeItem = ({ name, image, date }) => (
     <div className="col-12 newest-perfume-item">
         <div className="perfume-image">
             <img src={image} alt="perfume-item" />
@@ -14,4 +14,4 @@ const PopularPerfumeItem = ({ name, image, date }) => (
     </div>
 );
 
-export default PopularPerfumeItem;
+export default NewestPerfumeItem;

@@ -15,4 +15,9 @@
     --product-description-date: #626465;
     --form-text: #000000;
     --button-background: #0a68cc;
+    --finished-status: #315bef;
+    --performing-status: #00d63c;
+    --confirming-status: #01c394;
+    --cancelled-status: #e50000;
+    --created-by: #0038fc;
 }

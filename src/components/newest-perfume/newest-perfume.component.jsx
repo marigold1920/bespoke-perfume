@@ -1,6 +1,6 @@
 import React from "react";
 
-import PopularPerfumeItem from "../newest-perfume-item/newest-perfume-item.component";
+import NewestPerfumeItem from "../newest-perfume-item/newest-perfume-item.component";
 import Header from "../header/header.component";
 import { perfumeApi } from "../../apis/api";
 
@@ -24,7 +24,7 @@ class NewestPerfume extends React.Component {
                 <div className="row">
                     <Header title="Newest Perfumes" action="See more" />
                     {newestPerfumes.map(({ perfumeId, ...otherProps }) => (
-                        <PopularPerfumeItem key={perfumeId} {...otherProps} />
+                        <NewestPerfumeItem key={perfumeId} {...otherProps} />
                     ))}
                 </div>
             </div>

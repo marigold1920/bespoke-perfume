@@ -7,3 +7,7 @@ export const userApi = axios.create({
 export const perfumeApi = axios.create({
     baseURL: "https://scenlab-booking.herokuapp.com/perfumes"
 })
+
+export const bookingApi = axios.create({
+    baseURL: "https://scenlab-booking.herokuapp.com/bookings"
+})

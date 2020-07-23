@@ -3,6 +3,7 @@ import React from "react";
 import PopularPerfume from "../../components/popular-perfume/popular-perfume.component";
 import NewestPerfume from "../../components/newest-perfume/newest-perfume.component";
 import Banner from "../../components/banner/banner.component";
+import Booking from "../../components/booking/booking.component";
 
 import "./home-page.styles.scss";
 
@@ -17,6 +18,7 @@ class HomePage extends React.Component {
                     </div>
                     <div className="center-box col-lg-6 col-sm-12">
                         <Banner />
+                        <Booking />
                     </div>
                 </div>
             </div>
