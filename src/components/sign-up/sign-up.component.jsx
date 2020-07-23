@@ -87,7 +87,7 @@ class SignUp extends React.Component {
                 </div>
                 <div className="imgBx">
                     <img
-                        src="https://i.ibb.co/VpFGd7V/login-bg.jpg"
+                        src="https://i.ibb.co/dGLqhd3/login-bg-2.png"
                         alt="login-bg"
                     />
                 </div>

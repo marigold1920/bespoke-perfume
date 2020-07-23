@@ -28,7 +28,7 @@ class SignIn extends React.Component {
             <div className="user signinBx">
                 <div className="imgBx">
                     <img
-                        src="https://i.ibb.co/VpFGd7V/login-bg.jpg"
+                        src="https://i.ibb.co/BZt31yw/login-bg-1.png"
                         alt="login-bg"
                     />
                 </div>
