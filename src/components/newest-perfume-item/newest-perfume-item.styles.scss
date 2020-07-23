@@ -1,0 +1,42 @@
+.popular-perfume-item {
+    background: var(--background-item);
+    display: flex;
+    flex-wrap: nowrap;
+    min-height: 115px;
+    align-items: center;
+    margin: 1px 0;
+
+    .perfume-image {
+        min-width: 100px;
+        min-height: 86px;
+    }
+
+    .perfume-info {
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 100%;
+        }
+
+        .name {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 20px;
+            text-align: left;
+            color: (--product-name);
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 1;
+            text-align: left;
+            color: var(--product-description-date);
+        }
+    }
+}
