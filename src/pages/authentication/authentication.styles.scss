@@ -98,7 +98,8 @@ section {
                         text-transform: uppercase;
                         font-weight: 400;
 
-                        a {
+                        span {
+                            cursor: pointer;
                             font-weight: 600;
                             text-decoration: none;
                             color: #677eff;
