@@ -30,20 +30,20 @@ const BookingItem = ({
                         </div>
                     </div>
                     <div className="action">
-                        <p>View booking details</p>
+                        <p>Xem chi tiết</p>
                         <MoreArrow />
                     </div>
                 </div>
             </div>
             <div className="row booking-info">
-                <BookingItemInfo title="Type Perfume:" value={type} />
-                <BookingItemInfo title="Date Booking:" value={dateBooking} />
+                <BookingItemInfo title="Làm cho:" value={type} />
+                <BookingItemInfo title="Ngày hẹn:" value={dateBooking} />
                 <BookingItemInfo
-                    title="Time:"
+                    title="Thời gian:"
                     value={`${timeStart} - ${timeEnd}`}
                 />
                 <BookingItemInfo title="Fee:" value={fee} />
-                <BookingItemInfo title="Date Finished:" value={dateFinished} />
+                <BookingItemInfo title="Ngày hoàn thành:" value={dateFinished} />
                 <div className="col-4 expert-info">
                     <div className="created-by">
                         <div className="expert-image">
@@ -53,8 +53,8 @@ const BookingItem = ({
                             />
                         </div>
                         <div className="info">
-                            <span>Created By</span>
-                            <p>Victor Nguyen</p>
+                            <span>Tạo bởi</span>
+                            <p>Expert</p>
                         </div>
                     </div>
                 </div>

@@ -22,7 +22,7 @@ class NewestPerfume extends React.Component {
         return newestPerfumes.length ? (
             <div className="newest-perfume">
                 <div className="row">
-                    <Header title="Newest Perfumes" action="See more" />
+                    <Header title="Nước hoa mới nhất" action="See more" />
                     {newestPerfumes.map(({ perfumeId, ...otherProps }) => (
                         <NewestPerfumeItem key={perfumeId} {...otherProps} />
                     ))}

@@ -9,7 +9,7 @@ const NewestPerfumeItem = ({ name, image, date = "20/07/2020" }) => (
         </div>
         <div className="perfume-info">
             <span className="name">{name}</span>
-            <p>Posted by Expert, on {date}</p>
+            <p>Đăng bởi Expert, on {date}</p>
         </div>
     </div>
 );

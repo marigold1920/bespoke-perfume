@@ -28,8 +28,8 @@ class Booking extends React.Component {
         return bookings.length ? (
             <div className="booking">
                 <Header
-                    title="Your Perfume Bookings"
-                    action="View all booking"
+                    title="Những lịch hẹn của bạn"
+                    action="Xem tất cả lịch hẹn"
                 />
                 {bookings.map(({ bookingId, ...otherProps }) => (
                     <BookingItem key={bookingId} {...otherProps} />

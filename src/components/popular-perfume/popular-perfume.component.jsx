@@ -23,7 +23,7 @@ class PopularPerfume extends React.Component {
         const { popularPerfumes } = this.state;
         return popularPerfumes.length ? (
             <div className="popular-perfume">
-                <Header title="Popular Perfumes" action="See more" />
+                <Header title="Nước hoa phổ biến" action="See more" />
                 <div className="items">
                     {popularPerfumes.map(({ perfumeId, ...otherProps }) => (
                         <PopularPerfumeItem key={perfumeId} {...otherProps} />

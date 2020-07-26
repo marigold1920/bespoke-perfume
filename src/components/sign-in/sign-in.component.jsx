@@ -34,25 +34,25 @@ class SignIn extends React.Component {
                 </div>
                 <div className="formBx">
                     <form onSubmit={this.handleSubmit}>
-                        <h2>Sign In</h2>
+                        <h2>Đăng nhập</h2>
                         <input
                             type="text"
                             name="username"
-                            placeholder="Username"
+                            placeholder="Tên đăng nhập"
                             value={username}
                             onChange={this.handleChange}
                         />
                         <input
                             type="password"
                             name="password"
-                            placeholder="Password"
+                            placeholder="Mật khẩu"
                             value={password}
                             onChange={this.handleChange}
                         />
-                        <input type="submit" value="Login" />
+                        <input type="submit" value="Đăng nhập" />
                         <p className="sign-up">
-                            Don't have an account?{" "}
-                            <span onClick={this.props.toggleForm}>Sign Up</span>
+                            Không có tài khoản?{" "}
+                            <span onClick={this.props.toggleForm}>Đăng ký</span>
                         </p>
                     </form>
                 </div>
