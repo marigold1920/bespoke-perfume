@@ -9,7 +9,6 @@ const Header = ({ title, action }) => (
             <h3>{title}</h3>
         </div>
         <div className="action">
-            <p>{action}</p>
             <MoreArrow />
         </div>
     </div>

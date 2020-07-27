@@ -1,6 +1,6 @@
 import React from "react";
 
-import BookingItemInfo from "../booking-item-info/booking-item-info.component";
+import ItemInfo from "../item-info/item-info.component";
 
 import "./booking-item.styles.scss";
 import { ReactComponent as MoreArrow } from "../../assets/more-arrow.svg";
@@ -36,14 +36,24 @@ const BookingItem = ({
                 </div>
             </div>
             <div className="row booking-info">
-                <BookingItemInfo title="Loại nước hoa:" value={type} />
-                <BookingItemInfo title="Ngày đặt hàng:" value={dateBooking} />
-                <BookingItemInfo
+                <ItemInfo
+                    columnSize="col-4"
+                    title="Loại nước hoa:"
+                    value={type}
+                />
+                <ItemInfo
+                    columnSize="col-4"
+                    title="Ngày đặt hàng:"
+                    value={dateBooking}
+                />
+                <ItemInfo
+                    columnSize="col-4"
                     title="Thời gian:"
                     value={`${timeStart} - ${timeEnd}`}
                 />
-                <BookingItemInfo title="Chi phí:" value={fee} />
-                <BookingItemInfo
+                <ItemInfo columnSize="col-4" title="Chi phí:" value={fee} />
+                <ItemInfo
+                    columnSize="col-4"
                     title="Ngày hoàn thành:"
                     value={dateFinished}
                 />
