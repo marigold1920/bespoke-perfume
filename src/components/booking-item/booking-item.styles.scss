@@ -84,10 +84,16 @@
 
                 p {
                     width: 100%;
+                    text-align: right;
+                    cursor: pointer;
                     margin: auto 10px;
                     padding: 0;
                     font-size: 15px;
                     font-weight: 400;
+
+                    &:hover {
+                        color: var(--header-action);
+                    }
                 }
 
                 svg {

@@ -27,13 +27,12 @@ class Booking extends React.Component {
         const { bookings } = this.state;
         return bookings.length ? (
             <div className="booking">
-                <Header
-                    title="Your Perfume Bookings"
-                    action="View all booking"
-                />
-                {bookings.map(({ bookingId, ...otherProps }) => (
-                    <BookingItem key={bookingId} {...otherProps} />
-                ))}
+                <Header title="Đơn hàng của bạn" action="Xem tất cả" />
+                <div className="booking-overlap">
+                    {bookings.map(({ bookingId, ...otherProps }) => (
+                        <BookingItem key={bookingId} {...otherProps} />
+                    ))}
+                </div>
             </div>
         ) : null;
     }

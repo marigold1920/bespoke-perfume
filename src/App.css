@@ -1,11 +1,19 @@
+@font-face {
+    font-family: "MazzardH";
+    src: local("MazzardH-Bold") url(./fonts/MazzardH-Bold.otf)
+        format("truetype");
+}
+
 * {
     box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+    font-family: "MazzardH", sans-serif;
     font-weight: 500;
 }
 
 .container-fluid {
     background: #f0f2f5;
+    max-height: 100vh;
+    overflow: hidden;
 }
 
 :root {
@@ -19,5 +27,6 @@
     --performing-status: #00d63c;
     --confirming-status: #01c394;
     --cancelled-status: #e50000;
+    --header-action: #ff0644;
     --created-by: #0038fc;
 }
