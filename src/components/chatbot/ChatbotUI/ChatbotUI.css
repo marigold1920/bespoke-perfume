@@ -1,0 +1,281 @@
+.chatbot-box dropdown-menu show dropdown-menu-right {
+  position: absolute;
+  top: auto;
+  left: 0px;
+  margin: 0px;
+  right: auto;
+  bottom: 0px;
+  transform: translate(-471px, -62px);
+}
+
+/*! CSS Used from: https://buttapptest.azurewebsites.net/static/css/2.af3c1da9.chunk.css */
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+[tabindex="-1"]:focus:not(:focus-visible) {
+  outline: 0 !important;
+}
+ul {
+  margin-bottom: 1rem;
+}
+ul {
+  margin-top: 0;
+}
+svg {
+  vertical-align: middle;
+}
+svg {
+  overflow: hidden;
+}
+button {
+  border-radius: 0;
+}
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+button,
+input {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+button,
+input {
+  overflow: visible;
+}
+button {
+  text-transform: none;
+}
+[role="button"] {
+  cursor: pointer;
+}
+[type="button"],
+button {
+  -webkit-appearance: button;
+}
+[type="button"]::-moz-focus-inner,
+button::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+.dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+.dropup .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  margin-top: 0;
+  margin-bottom: 0.125rem;
+}
+.dropdown-menu[x-placement^="top"] {
+  right: auto;
+  bottom: auto;
+}
+.dropdown-divider {
+  height: 0;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  border-top: 1px solid #e9ecef;
+}
+.dropdown-menu.show {
+  display: block;
+}
+.dropdown-header {
+  display: block;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  color: #6c757d;
+  white-space: nowrap;
+}
+.font-weight-bolder {
+  font-weight: bolder !important;
+}
+@media print {
+  *,
+  :after,
+  :before {
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+}
+/*! CSS Used from: https://buttapptest.azurewebsites.net/static/css/main.f9d6a0b4.chunk.css */
+.chatbot-box {
+  width: 500px;
+  height: 550px;
+}
+.font-big-size {
+  font-size: large !important;
+}
+.chatbot-box-inside {
+  width: 100%;
+  height: 100%;
+}
+/*! CSS Used from: Embedded */
+.css-9ohtah {
+  color: transparent;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  white-space: nowrap;
+  width: 1px;
+}
+.css-gtdio3 {
+  overflow: hidden;
+  position: relative;
+}
+.css-1t62idy {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+.css-16qahhi {
+  display: flex;
+}
+.css-16qahhi input {
+  flex: 1 1 0%;
+}
+.css-1lzfo2b {
+  overflow: hidden;
+  position: relative;
+}
+.css-1lzfo2b > input {
+  height: 0px;
+  width: 0px;
+  opacity: 0;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.css-1882x3w > .main {
+  display: flex;
+}
+.css-1fe8kfc {
+  flex: 10000 1 0%;
+}
+.css-mfy564 {
+  flex: 1 1 0%;
+}
+.css-sph49o {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+.css-sph49o .webchat__toaster__list {
+  display: block;
+  list-style-type: none;
+}
+.css-y1c0xs {
+  height: 100%;
+  overflow-y: auto;
+  width: 100%;
+}
+.css-ca0rlf {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+.css-dhu3ty {
+  list-style-type: none;
+}
+.css-1l9a57c {
+  flex-shrink: 0;
+}
+.css-7c9av6 {
+  margin: 0px;
+  padding: 0px;
+}
+.css-990gl9 {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+.css-eycyw2 > .main {
+  background-color: white;
+  border-top: 1px solid rgb(230, 230, 230);
+  min-height: 40px;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+}
+.css-115fwte {
+  background-color: transparent;
+  border: 0px;
+  height: 100%;
+  outline: 0px;
+  padding: 0px;
+  width: 40px;
+}
+.css-115fwte svg {
+  fill: rgb(118, 118, 118);
+}
+.css-115fwte:disabled svg {
+  fill: rgb(204, 204, 204);
+}
+.css-n2zczk {
+  font-family: Calibri, "Helvetica Neue", Arial, sans-serif;
+  padding: 10px;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.css-1mou18w {
+  font-family: Calibri, "Helvetica Neue", Arial, sans-serif;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.css-1mou18w > input {
+  background-color: white;
+  border: 0px;
+  font-family: inherit;
+  font-size: inherit;
+  height: 100%;
+  outline: 0px;
+  padding: 0px;
+}
+.css-1mou18w > input:disabled {
+  color: rgb(118, 118, 118);
+}
+.css-1mou18w > input::placeholder {
+  color: rgb(118, 118, 118);
+}
+.css-6wwnjx {
+  overflow-y: hidden;
+}
+.css-6wwnjx:not(.webchat__toaster--expandable) {
+  max-height: 50px;
+}
+.css-6wwnjx .webchat__toaster__list {
+  margin: 0px;
+  overflow-y: auto;
+  padding: 0px;
+}
+.css-14x775w {
+  width: 40px;
+}

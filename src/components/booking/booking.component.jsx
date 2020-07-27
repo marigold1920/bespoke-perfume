@@ -4,6 +4,7 @@ import { bookingApi } from "../../apis/api";
 
 import Header from "../header/header.component";
 import BookingItem from "../booking-item/booking-item.component";
+import BotButton from "../chatbot/ChatBotButton/BotButton.js";
 
 import "./booking.styles.scss";
 
@@ -34,6 +35,7 @@ class Booking extends React.Component {
                 {bookings.map(({ bookingId, ...otherProps }) => (
                     <BookingItem key={bookingId} {...otherProps} />
                 ))}
+                <BotButton/>
             </div>
         ) : null;
     }

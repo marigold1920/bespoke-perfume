@@ -1,0 +1,16 @@
+.sender-card-main-div-style{
+    /* float: left;
+    padding-right: 30;
+    width: 270; */
+}
+.sender-card-main-div-style .card-content{
+    border: 1px;
+}
+.sender-card-main-div-style :hover{
+    background-color: aqua;
+}
+
+.sender-card-main-div-style .card-image img{
+    width:30px;
+    height:30px;
+}
