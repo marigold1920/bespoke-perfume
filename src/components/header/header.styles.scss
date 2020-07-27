@@ -32,10 +32,15 @@
 
         p {
             width: 100%;
+            cursor: pointer;
             margin: auto 10px;
             padding: 0;
             font-size: 15px;
             text-align: right;
+
+            &:hover {
+                color: var(--header-action);
+            }
         }
 
         svg {

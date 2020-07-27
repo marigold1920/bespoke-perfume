@@ -25,7 +25,7 @@ const BookingItem = ({
                 <div className="product-name">
                     <div className="title">
                         <h3>{name}</h3>
-                        <div className={`status ${status.toLowerCase()}`}>
+                        <div className="status performing">
                             <p>{status}</p>
                         </div>
                     </div>
@@ -36,14 +36,17 @@ const BookingItem = ({
                 </div>
             </div>
             <div className="row booking-info">
-                <BookingItemInfo title="Làm cho:" value={type} />
-                <BookingItemInfo title="Ngày hẹn:" value={dateBooking} />
+                <BookingItemInfo title="Loại nước hoa:" value={type} />
+                <BookingItemInfo title="Ngày đặt hàng:" value={dateBooking} />
                 <BookingItemInfo
                     title="Thời gian:"
                     value={`${timeStart} - ${timeEnd}`}
                 />
-                <BookingItemInfo title="Fee:" value={fee} />
-                <BookingItemInfo title="Ngày hoàn thành:" value={dateFinished} />
+                <BookingItemInfo title="Chi phí:" value={fee} />
+                <BookingItemInfo
+                    title="Ngày hoàn thành:"
+                    value={dateFinished}
+                />
                 <div className="col-4 expert-info">
                     <div className="created-by">
                         <div className="expert-image">
@@ -53,8 +56,8 @@ const BookingItem = ({
                             />
                         </div>
                         <div className="info">
-                            <span>Tạo bởi</span>
-                            <p>Expert</p>
+                            <span>Được tạo bởi</span>
+                            <p>Victor Nguyen</p>
                         </div>
                     </div>
                 </div>

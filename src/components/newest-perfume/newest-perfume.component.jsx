@@ -13,7 +13,7 @@ class NewestPerfume extends React.Component {
 
     componentDidMount() {
         perfumeApi
-            .get("/newest")
+            .get("/newest?page=1")
             .then(response => this.setState({ newestPerfumes: response.data }));
     }
 
@@ -22,10 +22,15 @@ class NewestPerfume extends React.Component {
         return newestPerfumes.length ? (
             <div className="newest-perfume">
                 <div className="row">
-                    <Header title="Nước hoa mới nhất" action="See more" />
-                    {newestPerfumes.map(({ perfumeId, ...otherProps }) => (
-                        <NewestPerfumeItem key={perfumeId} {...otherProps} />
-                    ))}
+                    <Header title="Vừa cập nhật" action="Nhiều hơn nữa" />
+                    <div className="overlap">
+                        {newestPerfumes.map(({ perfumeId, ...otherProps }) => (
+                            <NewestPerfumeItem
+                                key={perfumeId}
+                                {...otherProps}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         ) : null;
