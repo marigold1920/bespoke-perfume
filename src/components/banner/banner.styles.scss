@@ -1,9 +1,13 @@
 .banner {
     max-height: 30vh;
+    border-radius: 15px;
 
-    img {
+    .slider-control-centerleft,
+    .slider-control-centerright {
+        visibility: hidden;
+    }
+
+    .slider-frame {
         border-radius: 15px;
-        width: 100%;
-        height: auto;
     }
 }
