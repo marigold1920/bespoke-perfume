@@ -39,7 +39,7 @@ const BookingItem = ({
                 <BookingItemInfo title="Loại nước hoa:" value={type} />
                 <BookingItemInfo title="Ngày đặt hàng:" value={dateBooking} />
                 <BookingItemInfo
-                    title="Time:"
+                    title="Thời gian:"
                     value={`${timeStart} - ${timeEnd}`}
                 />
                 <BookingItemInfo title="Chi phí:" value={fee} />
