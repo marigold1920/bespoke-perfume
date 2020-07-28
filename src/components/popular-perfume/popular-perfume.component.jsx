@@ -13,7 +13,7 @@ class PopularPerfume extends React.Component {
 
     componentDidMount() {
         perfumeApi
-            .get("/popular")
+            .get("/popular?page=1")
             .then(response =>
                 this.setState({ popularPerfumes: response.data })
             );
@@ -23,7 +23,7 @@ class PopularPerfume extends React.Component {
         const { popularPerfumes } = this.state;
         return popularPerfumes.length ? (
             <div className="popular-perfume">
-                <Header title="Popular Perfumes" action="See more" />
+                <Header title="Lựa chọn nhiều nhất" action="Nhiều hơn nữa" />
                 <div className="items">
                     {popularPerfumes.map(({ perfumeId, ...otherProps }) => (
                         <PopularPerfumeItem key={perfumeId} {...otherProps} />

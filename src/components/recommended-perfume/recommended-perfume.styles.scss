@@ -1,8 +1,9 @@
-.newest-perfume {
-    display: flex;
+.recommended-perfume {
+    width: 100%;
 
-    .overlap {
-        max-height: 50vh;
+    .recommended-overlap {
+        width: 100%;
+        max-height: 35vh;
         overflow: hidden;
         overflow-y: scroll;
 

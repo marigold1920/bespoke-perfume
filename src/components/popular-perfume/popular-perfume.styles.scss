@@ -1,8 +1,9 @@
 .popular-perfume {
-    margin-top: 10px;
+    margin-top: 1vh;
     display: flex;
     flex-direction: column;
     padding: 0;
+    max-height: 40vh;
 
     .row {
         width: 100%;
@@ -15,5 +16,16 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         background: var(--background-item);
+        overflow: hidden;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: transparent;
+        }
     }
 }

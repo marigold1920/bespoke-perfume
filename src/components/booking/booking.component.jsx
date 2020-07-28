@@ -14,27 +14,21 @@ class Booking extends React.Component {
     };
 
     componentDidMount() {
-        bookingApi.get("/customers").then(respons =>
-            this.setState({
-                bookings: respons.data.slice(
-                    0,
-                    Math.min(4, respons.data.length)
-                ),
-            })
-        );
+        bookingApi
+            .get("/customers")
+            .then(respons => this.setState({ bookings: respons.data }));
     }
 
     render() {
         const { bookings } = this.state;
         return bookings.length ? (
             <div className="booking">
-                <Header
-                    title="Your Perfume Bookings"
-                    action="View all booking"
-                />
-                {bookings.map(({ bookingId, ...otherProps }) => (
-                    <BookingItem key={bookingId} {...otherProps} />
-                ))}
+                <Header title="Đơn hàng của bạn" action="Xem tất cả" />
+                <div className="booking-overlap">
+                    {bookings.map(({ bookingId, ...otherProps }) => (
+                        <BookingItem key={bookingId} {...otherProps} />
+                    ))}
+                </div>
                 <BotButton/>
             </div>
         ) : null;

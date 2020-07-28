@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import FormInput from "../form-input/form-input.component";
+
 import { userLogin } from "../../redux/user/user.actions";
 
 import "./sign-in.styles.scss";
@@ -35,23 +37,23 @@ class SignIn extends React.Component {
                 <div className="formBx">
                     <form onSubmit={this.handleSubmit}>
                         <h2>Sign In</h2>
-                        <input
+                        <FormInput
                             type="text"
                             name="username"
                             placeholder="Username"
                             value={username}
-                            onChange={this.handleChange}
+                            handleChange={this.handleChange}
                         />
-                        <input
+                        <FormInput
                             type="password"
                             name="password"
                             placeholder="Password"
                             value={password}
-                            onChange={this.handleChange}
+                            handleChange={this.handleChange}
                         />
                         <input type="submit" value="Login" />
                         <p className="sign-up">
-                            Don't have an account?{" "}
+                            Don't have an account?
                             <span onClick={this.props.toggleForm}>Sign Up</span>
                         </p>
                     </form>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import BookingItemInfo from "../booking-item-info/booking-item-info.component";
+import ItemInfo from "../item-info/item-info.component";
 
 import "./booking-item.styles.scss";
 import { ReactComponent as MoreArrow } from "../../assets/more-arrow.svg";
@@ -25,25 +25,38 @@ const BookingItem = ({
                 <div className="product-name">
                     <div className="title">
                         <h3>{name}</h3>
-                        <div className={`status ${status.toLowerCase()}`}>
+                        <div className="status performing">
                             <p>{status}</p>
                         </div>
                     </div>
                     <div className="action">
-                        <p>View booking details</p>
+                        <p>Xem chi tiết</p>
                         <MoreArrow />
                     </div>
                 </div>
             </div>
             <div className="row booking-info">
-                <BookingItemInfo title="Type Perfume:" value={type} />
-                <BookingItemInfo title="Date Booking:" value={dateBooking} />
-                <BookingItemInfo
-                    title="Time:"
+                <ItemInfo
+                    columnSize="col-4"
+                    title="Loại nước hoa:"
+                    value={type}
+                />
+                <ItemInfo
+                    columnSize="col-4"
+                    title="Ngày đặt hàng:"
+                    value={dateBooking}
+                />
+                <ItemInfo
+                    columnSize="col-4"
+                    title="Thời gian:"
                     value={`${timeStart} - ${timeEnd}`}
                 />
-                <BookingItemInfo title="Fee:" value={fee} />
-                <BookingItemInfo title="Date Finished:" value={dateFinished} />
+                <ItemInfo columnSize="col-4" title="Chi phí:" value={fee} />
+                <ItemInfo
+                    columnSize="col-4"
+                    title="Ngày hoàn thành:"
+                    value={dateFinished}
+                />
                 <div className="col-4 expert-info">
                     <div className="created-by">
                         <div className="expert-image">
@@ -53,7 +66,7 @@ const BookingItem = ({
                             />
                         </div>
                         <div className="info">
-                            <span>Created By</span>
+                            <span>Được tạo bởi</span>
                             <p>Victor Nguyen</p>
                         </div>
                     </div>
