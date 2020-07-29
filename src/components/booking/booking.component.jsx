@@ -13,14 +13,9 @@ class Booking extends React.Component {
     };
 
     componentDidMount() {
-        bookingApi.get("/customers").then(respons =>
-            this.setState({
-                bookings: respons.data.slice(
-                    0,
-                    Math.min(4, respons.data.length)
-                ),
-            })
-        );
+        bookingApi
+            .get("/customers")
+            .then(respons => this.setState({ bookings: respons.data }));
     }
 
     render() {

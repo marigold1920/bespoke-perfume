@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import FormInput from "../form-input/form-input.component";
+
 import { userLogin } from "../../redux/user/user.actions";
 
 import "./sign-in.styles.scss";
@@ -40,14 +42,14 @@ class SignIn extends React.Component {
                             name="username"
                             placeholder="Tên đăng nhập"
                             value={username}
-                            onChange={this.handleChange}
+                            handleChange={this.handleChange}
                         />
-                        <input
+                        <FormInput
                             type="password"
                             name="password"
                             placeholder="Mật khẩu"
                             value={password}
-                            onChange={this.handleChange}
+                            handleChange={this.handleChange}
                         />
                         <input type="submit" value="Đăng nhập" />
                         <p className="sign-up">

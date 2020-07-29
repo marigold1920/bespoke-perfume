@@ -18,9 +18,10 @@
 
 :root {
     --background: #f0f2f5;
+    --background-box: #f0f2f5;
     --background-item: #ffffff;
     --product-name: #282828;
-    --product-description-date: #626465;
+    --product-description: #626465;
     --form-text: #000000;
     --button-background: #0a68cc;
     --finished-status: #315bef;
@@ -29,4 +30,6 @@
     --cancelled-status: #e50000;
     --header-action: #ff0644;
     --created-by: #0038fc;
+    --send-button: #315bef;
+    --chatbox-header: #171929;
 }

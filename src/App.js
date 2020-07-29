@@ -16,8 +16,8 @@ class App extends React.Component {
     return (
       <div className="container-fluid p-0">
         <Switch>
-          <Route exact path="/" render={() => this.props.token === "" ? (<Authenticaton />) : (<Redirect to="/homepage" />)} />
-          <Route path="/homepage" component={HomePage} />
+          <Route exact path="/" render={() => this.props.token === "" ? (<Authenticaton />) : (<Redirect to="/dashboard" />)} />
+          <Route path="/dashboard" component={HomePage} />
         </Switch>
       </div>
     )

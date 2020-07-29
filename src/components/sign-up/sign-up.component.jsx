@@ -1,25 +1,54 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
+
+import { userApi } from "../../apis/api";
+
+import FormInput from "../form-input/form-input.component";
 
 import "./sign-up.styles.scss";
 
 class SignUp extends React.Component {
     state = {
-        username: "",
-        password: "",
-        fullName: "",
-        gender: "",
-        photo: "",
-        email: "",
+        user: {
+            username: "",
+            password: "",
+            fullName: "",
+            address: "",
+            email: "",
+            phone: "",
+        },
+        isSignUp: false,
     };
 
     handleChange = event => {
         const { name, value } = event.target;
-        this.setState({ [name]: value });
+        this.setState({ user: { ...this.state.user, [name]: value } });
     };
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log(this.state);
+        const {
+            username,
+            fullName,
+            password,
+            address,
+            email,
+            phone,
+        } = this.state.user;
+        userApi
+            .post("/users/signup-user", {
+                username,
+                fullName,
+                password,
+                address,
+                email,
+                phone,
+                gender: 0,
+                image: "xxx.png",
+            })
+            .then(response =>
+                this.setState({ isSignUp: response.status === 200 })
+            );
     };
 
     render() {
@@ -27,60 +56,62 @@ class SignUp extends React.Component {
             username,
             fullName,
             password,
-            gender,
-            photo,
+            address,
             email,
-        } = this.state;
-        return (
+            phone,
+        } = this.state.user;
+        return !this.state.isSignUp ? (
             <div className="user signupBx">
                 <div className="formBx">
                     <form onSubmit={this.handleSubmit}>
                         <h2>Create an account</h2>
-                        <input
+                        <FormInput
                             type="text"
                             name="username"
-                            placeholder="Username"
+                            placeholder="Tên đăng nhập"
                             value={username}
-                            onChange={this.handleChange}
+                            handleChange={this.handleChange}
                         />
-                        <input
+                        <FormInput
                             type="password"
                             name="password"
-                            placeholder="Password"
+                            placeholder="Mật khẩu"
                             value={password}
-                            onChange={this.handleChange}
+                            handleChange={this.handleChange}
                         />
-                        <input
+                        <FormInput
                             type="text"
                             name="fullName"
-                            placeholder="Your Name"
+                            placeholder="Tên"
                             value={fullName}
-                            onChange={this.handleChange}
+                            handleChange={this.handleChange}
                         />
-                        <input
+                        <FormInput
+                            type="text"
+                            name="phone"
+                            placeholder="Điện thoại"
+                            value={phone}
+                            handleChange={this.handleChange}
+                        />
+                        <FormInput
                             type="email"
                             name="email"
-                            placeholder="Email Address"
+                            placeholder="Email"
                             value={email}
-                            onChange={this.handleChange}
+                            handleChange={this.handleChange}
                         />
-                        <input
+
+                        <FormInput
                             type="text"
-                            name="photo"
-                            placeholder="Photo"
-                            value={photo}
-                            onChange={this.handleChange}
+                            name="address"
+                            placeholder="Địa chỉ"
+                            value={address}
+                            handleChange={this.handleChange}
                         />
-                        <input
-                            type="text"
-                            name="gender"
-                            placeholder="Gender"
-                            value={gender}
-                            onChange={this.handleChange}
-                        />
+
                         <input type="submit" value="Sign Up" />
                         <p className="sign-up">
-                            Already have an account?{" "}
+                            Already have an account?
                             <span onClick={this.props.toggleForm}>Sign In</span>
                         </p>
                     </form>
@@ -92,6 +123,8 @@ class SignUp extends React.Component {
                     />
                 </div>
             </div>
+        ) : (
+            <Redirect to="/dashboard" />
         );
     }
 }
