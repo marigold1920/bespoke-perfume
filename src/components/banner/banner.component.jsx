@@ -6,7 +6,7 @@ import "./banner.styles.scss";
 
 const Banner = () => (
     <div className="banner">
-        <Carousel autoplay autoplayInterval="3000">
+        <Carousel autoplay autoplayInterval={3000}>
             <img src="https://i.ibb.co/hgMQgQ7/shop-banner.jpg" alt="banner" />
             <img
                 src="https://i.ibb.co/VHV0Mcd/Perfume-Banner1.png"

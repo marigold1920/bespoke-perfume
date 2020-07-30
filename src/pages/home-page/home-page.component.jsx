@@ -5,8 +5,8 @@ import { createStructuredSelector } from "reselect";
 
 import { selectToken } from "../../redux/user/user.selectors";
 
-import PopularPerfume from "../../components/popular-perfume/popular-perfume.component";
-import NewestPerfume from "../../components/newest-perfume/newest-perfume.component";
+import NotificationBoard from "../../components/notificaton-board/notificaton-board.component";
+import CalendarBoard from "../../components/calendar/calendar.component";
 import RecommendedPerfume from "../../components/recommended-perfume/recommended-perfume.component";
 import Chatbox from "../../components/chatbox/chatbox.component";
 import Banner from "../../components/banner/banner.component";
@@ -21,8 +21,8 @@ class HomePage extends React.Component {
             <div className="home-page">
                 <div className="row">
                     <div className="left-box col-lg-3 col-sm-12">
-                        <NewestPerfume />
-                        <PopularPerfume />
+                        <CalendarBoard />
+                        <NotificationBoard />
                     </div>
                     <div className="center-box col-lg-6 col-sm-12">
                         <Banner />

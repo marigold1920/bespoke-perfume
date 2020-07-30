@@ -1,6 +1,7 @@
 .banner {
     max-height: 30vh;
-    border-radius: 15px;
+    border-radius: 20px;
+    margin-bottom: 2vh;
 
     .slider-control-centerleft,
     .slider-control-centerright {
@@ -8,6 +9,6 @@
     }
 
     .slider-frame {
-        border-radius: 15px;
+        border-radius: 20px;
     }
 }
