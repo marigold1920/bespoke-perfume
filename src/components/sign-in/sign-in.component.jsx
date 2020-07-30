@@ -37,7 +37,7 @@ class SignIn extends React.Component {
                 <div className="formBx">
                     <form onSubmit={this.handleSubmit}>
                         <h2>Đăng nhập</h2>
-                        <input
+                        <FormInput
                             type="text"
                             name="username"
                             placeholder="Tên đăng nhập"

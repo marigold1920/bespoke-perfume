@@ -19,6 +19,7 @@
 :root {
     --background: #f0f2f5;
     --background-box: #f0f2f5;
+    --background-notification-icon: #fafafa;
     --background-item: #ffffff;
     --product-name: #282828;
     --product-description: #626465;
@@ -32,4 +33,5 @@
     --created-by: #0038fc;
     --send-button: #315bef;
     --chatbox-header: #171929;
+    --notification-icon: #6d6d6d;
 }
