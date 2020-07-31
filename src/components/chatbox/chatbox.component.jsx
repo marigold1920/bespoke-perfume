@@ -53,7 +53,7 @@ function Chatbox() {
 
                 let res = {
                     type: "sender",
-                    message: response.data.response,
+                    message: response.data.response.message,
                     customData: []
                 };
 
