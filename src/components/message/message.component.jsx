@@ -5,9 +5,10 @@ import "./message.styles.scss";
 const Message = ({ messages, isMine }) => {
     return (
         <div className={`chat-message ${isMine ? "message-me" : ""}`}>
-            {messages.map((message, index) => (
+            {/* {messages.map((message, index) => (
                 <p key={index}>{message}</p>
-            ))}
+            ))} */}
+            <p>{messages}</p>
         </div>
     );
 };

@@ -28,6 +28,7 @@ class Booking extends React.Component {
                         <BookingItem key={bookingId} {...otherProps} />
                     ))}
                 </div>
+                
             </div>
         ) : null;
     }
