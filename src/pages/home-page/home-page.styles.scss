@@ -1,5 +1,5 @@
 .home-page {
-    width: 100%;
+    width: 80%;
     background: var(--background);
     padding: 1vh 0;
 
@@ -9,6 +9,10 @@
 
         .center-box {
             padding: 0;
+        }
+
+        .right-box {
+            padding: 0 5px;
         }
     }
 }

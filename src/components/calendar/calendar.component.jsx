@@ -6,13 +6,23 @@ import Header from "../header/header.component";
 
 import "./calendar.styles.scss";
 
-const CalendarBoard = () => (
-    <div className="calendar-container">
-        <Header title="Hoạt động của bạn" />
-        <div className="calendar">
-            <Calendar locale="vi-VI" />
-        </div>
-    </div>
-);
+class CalendarBoard extends React.Component {
+    state = {
+        current: new Date(),
+    };
+
+    render() {
+        return (
+            <div className="calendar-container">
+                <div className="row">
+                    <Header title="Hoạt động của bạn" />
+                    <div className="calendar">
+                        <Calendar locale="vi-VI" />
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
 
 export default CalendarBoard;
