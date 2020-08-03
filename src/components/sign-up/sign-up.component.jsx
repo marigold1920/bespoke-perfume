@@ -71,6 +71,7 @@ class SignUp extends React.Component {
                             placeholder="Tên đăng nhập"
                             value={username}
                             handleChange={this.handleChange}
+                            required
                         />
                         <FormInput
                             type="password"
@@ -78,6 +79,7 @@ class SignUp extends React.Component {
                             placeholder="Mật khẩu"
                             value={password}
                             handleChange={this.handleChange}
+                            required
                         />
                         <FormInput
                             type="text"
@@ -85,6 +87,7 @@ class SignUp extends React.Component {
                             placeholder="Tên"
                             value={fullName}
                             handleChange={this.handleChange}
+                            required
                         />
                         <FormInput
                             type="text"
@@ -92,6 +95,7 @@ class SignUp extends React.Component {
                             placeholder="Điện thoại"
                             value={phone}
                             handleChange={this.handleChange}
+                            required
                         />
                         <FormInput
                             type="email"
@@ -99,6 +103,7 @@ class SignUp extends React.Component {
                             placeholder="Email"
                             value={email}
                             handleChange={this.handleChange}
+                            required
                         />
 
                         <FormInput
@@ -107,12 +112,16 @@ class SignUp extends React.Component {
                             placeholder="Địa chỉ"
                             value={address}
                             handleChange={this.handleChange}
+                            required
                         />
 
-                        <input type="submit" value="Sign Up" />
+                        <button type="submit">Sign Up</button>
                         <p className="sign-up">
                             Already have an account?
-                            <span onClick={this.props.toggleForm}>Sign In</span>
+                            <span onClick={this.props.toggleForm}>
+                                {" "}
+                                Sign In
+                            </span>
                         </p>
                     </form>
                 </div>

@@ -1,142 +1,131 @@
 .booking-item {
-    margin: 1px 0;
-    width: 100%;
-    min-height: 190px;
-    display: flex;
-    background: var(--background-item);
-    padding: 10px 0;
+   margin: 1px 0;
+   width: 100%;
+   display: flex;
+   background: var(--background-item);
+   padding: 10px 20px;
+   border-radius: 10px;
 
-    .booking-item-image {
-        height: 170px;
-        width: 120px;
-        margin-right: 10px;
+   .booking-header {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
 
-        img {
-            width: 100%;
+      .product-name {
+         display: flex;
+         flex-wrap: nowrap;
+         width: 100%;
+         border-radius: 15px 15px 0 0;
+         margin-bottom: 1px;
+         align-items: center;
+
+         .title {
+            flex-basis: 70%;
             height: 100%;
-        }
-    }
+            display: flex;
 
-    .booking-header {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
+            h3 {
+               margin: auto 0;
+               font-size: 20px;
+               font-weight: 400;
+            }
 
-        .product-name {
+            .status {
+               margin: 0 10px;
+               text-transform: capitalize;
+               padding: 5px 10px;
+               border-radius: 20px;
+
+               p {
+                  font-size: 15px;
+                  color: #ffffff;
+                  margin: 0;
+                  font-weight: 400;
+               }
+            }
+
+            .confirming {
+               background: var(--confirming-status);
+            }
+
+            .finished {
+               background: var(--finished-status);
+            }
+
+            .performing {
+               background: var(--performing-status);
+            }
+
+            .cancelled {
+               background: var(--cancelled-status);
+            }
+         }
+
+         .action {
+            flex-basis: 30%;
+            width: 100%;
             display: flex;
             flex-wrap: nowrap;
+            justify-content: space-between;
+            height: 100%;
+            padding-right: 10px;
+
+            p {
+               width: 100%;
+               text-align: right;
+               cursor: pointer;
+               margin: auto 10px;
+               padding: 0;
+               font-size: 15px;
+               font-weight: 400;
+
+               &:hover {
+                  color: var(--header-action);
+               }
+            }
+
+            svg {
+               margin: auto 0;
+            }
+         }
+      }
+   }
+
+   .booking-info {
+      margin-top: 15px !important;
+
+      .expert-info {
+         margin: 5px 0;
+         padding: 0;
+
+         .created-by {
+            display: flex;
             width: 100%;
-            background: var(--background-item);
-            border-radius: 15px 15px 0 0;
-            margin-bottom: 1px;
-            align-items: center;
 
-            .title {
-                flex-basis: 70%;
-                height: 100%;
-                display: flex;
+            .expert-image {
+               margin-right: 10px;
 
-                h3 {
-                    margin: auto 0;
-                    font-size: 20px;
-                    font-weight: 400;
-                }
-
-                .status {
-                    margin: 0 10px;
-                    text-transform: capitalize;
-                    padding: 5px 10px;
-                    border-radius: 20px;
-
-                    p {
-                        font-size: 15px;
-                        color: #ffffff;
-                        margin: 0;
-                        font-weight: 400;
-                    }
-                }
-
-                .confirming {
-                    background: var(--confirming-status);
-                }
-
-                .finished {
-                    background: var(--finished-status);
-                }
-
-                .performing {
-                    background: var(--performing-status);
-                }
-
-                .cancelled {
-                    background: var(--cancelled-status);
-                }
+               img {
+                  max-width: 40px;
+                  max-height: 40px;
+                  width: 100%;
+                  height: 100%;
+               }
             }
 
-            .action {
-                flex-basis: 30%;
-                width: 100%;
-                display: flex;
-                flex-wrap: nowrap;
-                justify-content: space-between;
-                height: 100%;
-                padding-right: 10px;
+            .info {
+               span {
+                  font-size: 16px;
+                  font-weight: 400;
+               }
 
-                p {
-                    width: 100%;
-                    text-align: right;
-                    cursor: pointer;
-                    margin: auto 10px;
-                    padding: 0;
-                    font-size: 15px;
-                    font-weight: 400;
-
-                    &:hover {
-                        color: var(--header-action);
-                    }
-                }
-
-                svg {
-                    margin: auto 0;
-                }
+               p {
+                  font-size: 13px;
+                  font-weight: 7 00;
+                  color: var(--created-by);
+               }
             }
-        }
-    }
-
-    .booking-info {
-        margin-top: 15px !important;
-
-        .expert-info {
-            padding: 0;
-
-            .created-by {
-                display: flex;
-                width: 100%;
-
-                .expert-image {
-                    margin-right: 10px;
-
-                    img {
-                        max-width: 40px;
-                        max-height: 40px;
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-
-                .info {
-                    span {
-                        font-size: 16px;
-                        font-weight: 400;
-                    }
-
-                    p {
-                        font-size: 13px;
-                        font-weight: 7 00;
-                        color: var(--created-by);
-                    }
-                }
-            }
-        }
-    }
+         }
+      }
+   }
 }

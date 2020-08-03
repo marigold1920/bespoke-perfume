@@ -1,0 +1,59 @@
+.input-box {
+   flex-basis: 25%;
+   display: flex;
+   justify-content: flex-start;
+   margin: auto 0;
+   padding: 0 10px;
+   border-radius: 25px;
+   transition: 0.5s ease-in-out;
+   transition-delay: 0.5s;
+
+   &:hover {
+      border: 1px solid var(--border-message);
+   }
+
+   &:hover > input {
+      width: 250px;
+      padding: 0 10px;
+   }
+
+   &:hover > .box-btn {
+      background: var(--background-box);
+   }
+
+   .box-btn {
+      color: var(--button-action);
+      padding: 15px;
+      border-radius: 50%;
+      border: none;
+      margin: auto 0;
+      background: var(--background);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: 1s;
+   }
+
+   input {
+      border: none;
+      border-radius: 20px 0 0 20px;
+      background: var(--background-box);
+      outline: none;
+      color: var(--product-name);
+      font-weight: 300;
+      transition: 1s;
+      line-height: 40px;
+      width: 0;
+      padding: 0;
+
+      &:valid {
+         width: 250px;
+         padding: 0 10px;
+      }
+
+      &:valid ~ .box-btn {
+         background: var(--background-box);
+      }
+   }
+}

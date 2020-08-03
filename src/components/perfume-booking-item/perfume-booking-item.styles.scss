@@ -1,0 +1,47 @@
+[data-tooltip]:before {
+   content: attr(data-tooltip);
+   position: absolute;
+   opacity: 0;
+   transition: all 0.15s ease;
+   padding: 10px;
+   font-size: 1.15rem;
+   font-weight: 400;
+   color: var(--product-description);
+   border-radius: 8px;
+   min-width: 15vw;
+}
+
+[data-tooltip]:hover:before {
+   opacity: 1;
+   background: var(--background);
+   margin-top: -50px;
+   margin-left: 20px;
+   z-index: 100;
+}
+
+[data-tooltip]:not([data-tooltip-persistent]):before {
+   pointer-events: none;
+}
+
+.perfume-item {
+   margin: 5px 10px;
+   position: relative;
+   border-radius: 20px;
+   background: var(--background-box);
+   padding: 10px;
+   box-shadow: 5px 10px 15px -12px rgba(0, 0, 0, 0.25);
+
+   &:hover span {
+      visibility: visible;
+      cursor: pointer;
+   }
+
+   span {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      top: 0;
+      left: 0;
+      visibility: hidden;
+   }
+}

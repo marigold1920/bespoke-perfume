@@ -1,58 +1,112 @@
 import React from "react";
 import Loading from "../loading/loading.component";
-import EmptyMessage from "../empty-message/empty-message.component";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
 import { bookingApi } from "../../apis/api";
+import { selectToggleModal, selectIsSubmit } from "../../redux/booking/booking.selectors";
+import { toggleModalCreate, clearBooking, toggleSubmit } from "../../redux/booking/booking.actions";
 
 import BookingItem from "../booking-item/booking-item.component";
+import EmptyMessage from "../empty-message/empty-message.component";
+import InputBox from "../input-box/input-box.component";
+import BookingModal from "../booking-modal/booking-modal.component";
 
 import "./booking.styles.scss";
 
 class Booking extends React.Component {
-    state = {
-        bookings: null,
-    };
+   state = {
+      bookings: null,
+   };
 
-    componentDidMount() {
-        bookingApi.get("/customers").then(response =>
-            this.setState({
-                bookings: response.status === 200 ? response.data : [],
-            })
-        );
-    }
+   componentDidMount() {
+      this.initBooking();
+   }
 
-    render() {
-        const { bookings } = this.state;
-        return (
-            <div className="booking">
-                <div className="booking-actions">
-                    <div className="search-box">
-                        <input
-                            className="search-text"
-                            type="text"
-                            placeholder="Tìm kiếm..."
-                        />
-                        <button className="search-btn">
-                            <i className="fas fa-search"></i>
-                        </button>
-                    </div>
-                    <div className="time-range"></div>
-                </div>
-                {bookings ? (
-                    <div className="booking-overlap">
-                        {bookings.map(({ bookingId, ...otherProps }) => (
-                            <BookingItem key={bookingId} {...otherProps} />
-                        ))}
-                        {bookings.length ? (
-                            <EmptyMessage message="Không có đơn hàng nào!" />
-                        ) : null}
-                    </div>
-                ) : (
-                    <Loading />
-                )}
+   initBooking = () => {
+      bookingApi.get("/bookings").then(response =>
+         this.setState({
+            bookings: response.status === 200 ? response.data : [],
+         })
+      );
+   };
+
+   handleOnClose = () => {
+      if (this.props.isSubmit) {
+         this.setState({ bookings: null });
+         this.props.clearBooking();
+         this.props.toggleSubmit();
+         this.initBooking();
+      }
+   };
+
+   renderActions = () => (
+      <div className="booking-actions">
+         <div className="header">
+            <h3>Đơn hàng của bạn</h3>
+         </div>
+         <div className="create-booking">
+            <button
+               onMouseEnter={() => this.props.toggleModalCreate()}
+               className="plus"
+               data-toggle="modal"
+               type="button"
+               data-target="#create"
+            >
+               <i className="fa fa-plus" aria-hidden="true"></i>
+            </button>
+         </div>
+         <InputBox placeholder="Tìm kiếm..." icon="fas fa-search" required />
+         <div className="time-range"></div>
+      </div>
+   );
+
+   renderBookings = bookings => (
+      <div>
+         {bookings ? (
+            <div className="booking-overlap">
+               {bookings.map(booking => (
+                  <BookingItem key={booking.bookingId} booking={booking} />
+               ))}
+               {!bookings.length ? <EmptyMessage message="Không có đơn hàng nào!" /> : null}
             </div>
-        );
-    }
+         ) : (
+            <Loading />
+         )}
+      </div>
+   );
+
+   render() {
+      const { bookings } = this.state;
+      const { toggleModal } = this.props;
+      return (
+         <div className="booking">
+            {this.renderActions()}
+            {this.renderBookings(bookings)}
+            {toggleModal ? (
+               <BookingModal
+                  title="Tạo  mới đơn hàng"
+                  target="create"
+                  action="Tạo đơn hàng"
+                  handleOnClose={this.handleOnClose}
+               />
+            ) : (
+               <BookingModal title="Chi tiết đơn hàng" target="viewDetails" />
+            )}
+         </div>
+      );
+   }
 }
 
-export default Booking;
+const mapStateToProps = createStructuredSelector({
+   toggleModal: selectToggleModal,
+   isSubmit: selectIsSubmit,
+});
+
+const mapDistpatchToProps = dispatch => ({
+   toggleModalCreate: () => dispatch(toggleModalCreate()),
+   clearBooking: () => dispatch(clearBooking()),
+   toggleSubmit: () => dispatch(toggleSubmit()),
+});
+
+export default connect(mapStateToProps, mapDistpatchToProps)(Booking);

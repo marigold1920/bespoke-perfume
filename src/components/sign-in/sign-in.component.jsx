@@ -43,6 +43,7 @@ class SignIn extends React.Component {
                             placeholder="Tên đăng nhập"
                             value={username}
                             handleChange={this.handleChange}
+                            required
                         />
                         <FormInput
                             type="password"
@@ -50,8 +51,9 @@ class SignIn extends React.Component {
                             placeholder="Mật khẩu"
                             value={password}
                             handleChange={this.handleChange}
+                            required
                         />
-                        <input type="submit" value="Đăng nhập" />
+                        <button type="submit">Đăng nhập</button>
                         <p className="sign-up">
                             Không có tài khoản?{" "}
                             <span onClick={this.props.toggleForm}>Đăng ký</span>

@@ -1,14 +1,39 @@
-input {
+.inputBox {
     position: relative;
-    width: 100%;
-    padding: 10px 20px;
-    background: var(--background-box);
-    color: var(--product-description);
-    border: none;
-    outline: none;
-    box-shadow: none;
-    margin: 8px 0;
-    font-size: 17px;
-    letter-spacing: 1px;
-    font-weight: 400;
+    margin: 0 0 35px 0;
+
+    input,
+    textarea {
+        width: 100% !important;
+        padding: 5px 0;
+        resize: none;
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--product-description);
+        border: none;
+        outline: none;
+        border-bottom: 1px solid var(--background);
+    }
+
+    input:focus ~ span,
+    textarea:focus ~ span,
+    input:valid ~ span,
+    textarea:valid ~ span {
+        transform: translateY(-20px);
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        color: var(--form-color);
+    }
+
+    span {
+        position: absolute;
+        left: 0;
+        padding: 0 5px;
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--product-description);
+        transition: 0.5s;
+        pointer-events: none;
+    }
 }

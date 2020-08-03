@@ -3,6 +3,7 @@ import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 import userReducer from "./user/user.reducers";
+import bookingReducer from "./booking/booking.reducer";
 
 const persistConfig = {
     key: "perfume-app",
@@ -11,7 +12,8 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-    user: userReducer
+    user: userReducer,
+    booking: bookingReducer
 })
 
 export default persistReducer(persistConfig, rootReducer);

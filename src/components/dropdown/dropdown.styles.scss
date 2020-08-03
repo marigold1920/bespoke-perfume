@@ -1,0 +1,15 @@
+.dropdown {
+    label {
+        font-size: 1.15rem;
+        font-weight: 400;
+        color: var(--product-description);
+    }
+
+    select {
+        color: var(--product-description);
+        font-size: 1.15rem;
+        border-radius: 8px;
+        font-weight: 400;
+        border: 1px solid var(--background);
+    }
+}

@@ -1,0 +1,295 @@
+.flex-column {
+   display: flex;
+   flex-direction: column;
+   text-align: left;
+}
+
+.text-format {
+   font-size: 1.15rem;
+   font-weight: 400;
+   color: var(--product-description);
+}
+
+.modal {
+   width: 100%;
+
+   .modal-dialog {
+      min-width: 60vw;
+      border: none;
+      outline: none;
+
+      .modal-content {
+         background: var(--background-modal);
+
+         .modal-header {
+            position: relative;
+            border: none;
+
+            &::after {
+               content: "";
+               position: absolute;
+               width: 15%;
+               border-top: 1px solid var(--modal-header);
+               margin-left: 1rem;
+               bottom: 0;
+               left: 0;
+            }
+
+            &::before {
+               content: "";
+               position: absolute;
+               width: 90%;
+               border-top: 1px solid var(--background);
+               margin-left: 1rem;
+               bottom: 0;
+               left: 0;
+            }
+
+            .modal-title {
+               color: var(--modal-header);
+               text-transform: uppercase;
+               font-size: 1.35rem;
+               font-weight: 500;
+            }
+         }
+
+         .modal-body {
+            width: 100%;
+
+            label,
+            span {
+               @extend .text-format;
+            }
+
+            .disabled-content {
+               pointer-events: none;
+            }
+
+            .information {
+               width: 100%;
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+
+               input,
+               select,
+               textarea {
+                  color: var(--product-description);
+                  font-size: 1.15rem;
+                  border-radius: 8px;
+                  font-weight: 400;
+                  border: 1px solid var(--background);
+               }
+
+               .basic-info {
+                  flex-basis: 50%;
+                  display: flex;
+                  flex-wrap: nowrap;
+                  justify-content: space-between;
+
+                  .left-side,
+                  .right-side {
+                     flex-basis: 50%;
+                     padding: 10px;
+                     text-align: left;
+                  }
+
+                  .left-side {
+                     display: flex;
+                     flex-direction: column;
+
+                     .group-dropdown {
+                        display: flex;
+                        flex-wrap: nowrap;
+                        justify-content: space-between;
+
+                        .dropdown {
+                           flex-basis: 63%;
+                           width: 100%;
+                        }
+
+                        .form-group {
+                           flex-basis: 35%;
+                        }
+                     }
+                  }
+               }
+
+               .extra-info {
+                  @extend .flex-column;
+                  flex-basis: 50%;
+                  width: 100%;
+                  padding: 0 20px;
+
+                  .note {
+                     @extend .flex-column;
+                     width: 100%;
+
+                     textarea {
+                        border: 1px solid var(--background);
+                        outline: none;
+                        min-height: 10vh;
+                        resize: none;
+                        padding: 10px 15px;
+                     }
+                  }
+
+                  .time-booking {
+                     width: 100%;
+                     display: flex;
+                     justify-content: space-between;
+
+                     .react-calendar {
+                        border: none;
+                        border-radius: 20px;
+                     }
+
+                     .flex-element {
+                        display: flex;
+                        padding: 10px 10px 10px 0;
+                        text-align: left;
+                     }
+
+                     .date,
+                     .slot {
+                        flex-basis: 50%;
+                        @extend .flex-element;
+                     }
+
+                     .date {
+                        width: 60%;
+                        flex-direction: column;
+
+                        .react-date-picker__wrapper {
+                           border: 1px solid var(--background);
+                           background: var(--background-box);
+                           padding: 7px 5px;
+                           border-radius: 8px;
+                           flex-direction: row-reverse;
+
+                           input,
+                           span {
+                              color: var(--product-description);
+                              font-size: 1.15rem;
+                              font-weight: 400;
+                           }
+
+                           input {
+                              border: none;
+                              border-radius: none;
+                           }
+
+                           svg {
+                              stroke: var(--product-description);
+                              margin-right: 10px;
+                           }
+
+                           .react-date-picker__inputGroup__year {
+                              width: fit-content;
+                           }
+                        }
+                     }
+
+                     .slot {
+                        flex-wrap: nowrap;
+                        justify-content: space-between;
+
+                        .dropdown {
+                           flex-basis: 49%;
+                           width: 100%;
+                        }
+                     }
+                  }
+               }
+            }
+
+            .perfumes {
+               text-align: left;
+               padding: 15px;
+
+               .perfumes-header {
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: 20px;
+                  position: relative;
+
+                  label {
+                     margin-right: 20px;
+                  }
+
+                  .recommender {
+                     .recommended-perfumes {
+                        position: absolute;
+                        top: 50px;
+                        max-height: 25vh;
+                        overflow: hidden;
+                        overflow-y: scroll;
+                        display: flex;
+                        flex-direction: column;
+                        text-align: left;
+                        z-index: 200;
+                        padding: 0 10px;
+
+                        &::-webkit-scrollbar {
+                           width: 0;
+                           background: transparent;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                           background: transparent;
+                        }
+
+                        span {
+                           min-width: 250px;
+                           padding: 10px;
+                           font-size: 1.05rem;
+                           background: var(--background);
+                           border-radius: 5px;
+                           margin-top: 2px;
+                           margin-left: 10px;
+                           cursor: pointer;
+                           width: 100%;
+
+                           &:hover {
+                              background: var(--background-modal);
+                           }
+                        }
+                     }
+                  }
+               }
+
+               .list {
+                  width: 65%;
+                  display: flex;
+                  flex-wrap: wrap;
+               }
+            }
+         }
+
+         .modal-footer {
+            border: none;
+
+            .btn {
+               line-height: 2.25;
+               text-transform: uppercase;
+               padding: 5px 25px;
+            }
+
+            .action-btn {
+               display: flex;
+               flex-wrap: nowrap;
+
+               .sc-iyvyFf {
+                  position: relative !important;
+               }
+
+               button {
+                  display: flex;
+                  text-transform: uppercase;
+                  font-weight: 500;
+               }
+            }
+         }
+      }
+   }
+}

@@ -1,64 +1,78 @@
 @font-face {
-    font-family: "MazzardH";
-    src: local("MazzardH-Bold") url(./fonts/MazzardH-Bold.otf)
-        format("truetype");
+   font-family: "MazzardH";
+   src: local("MazzardH-Bold") url(./fonts/MazzardH-Bold.otf) format("truetype");
 }
 
 * {
-    box-sizing: border-box;
-    font-family: "MazzardH", sans-serif;
-    font-weight: 500;
+   box-sizing: border-box;
+   font-family: "MazzardH", sans-serif;
+   font-weight: 500;
+}
+
+label,
+p {
+   margin: 0;
 }
 
 .container-fluid {
-    background: var(--background);
-    max-height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+   background: var(--background);
+   /* max-height: 100vh; */
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+   text-align: center;
+   align-items: center;
 }
 
 .loading {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background: var(--background-box);
+   border-radius: 0 0 20px 20px;
+}
+
+.loading .sc-iyvyFf {
+   position: relative !important;
 }
 
 .empty-message {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 
 .empty-message p {
-    color: var(--product-description);
-    font-size: 1.35rem;
-    font-weight: 300;
+   color: var(--product-description);
+   font-size: 1.35rem;
+   font-weight: 300;
 }
 
 :root {
-    /* --background: #f0f2f5; */
-    --background: #ffffff;
-    --background-box: #faf4fa;
-    --background-notification-icon: #fafafa;
-    --background-item: #ffffff;
-    --border-message: #e7e7e7;
-    --product-name: #282828;
-    --product-description: #626465;
-    --form-text: #000000;
-    --button-background: #0a68cc;
-    --finished-status: #315bef;
-    --performing-status: #00d63c;
-    --confirming-status: #01c394;
-    --cancelled-status: #e50000;
-    --header-action: #ff0644;
-    --created-by: #0038fc;
-    --send-button: #315bef;
-    --chatbox-header: #171929;
-    --notification-icon: #6d6d6d;
+   --background: #ebeff4;
+   --background-box: #ffffff;
+   --background-modal: #fafcfe;
+   --secondary-text: #ffffff;
+   --background-notification-icon: #fafafa;
+   --background-item: #ffffff;
+   --border-message: #e7e7e7;
+   --product-name: #282828;
+   --product-description: #626465;
+   --form-text: #000000;
+   --button-background: #0038fc;
+   --finished-status: #315bef;
+   --performing-status: #00d63c;
+   --confirming-status: #01c394;
+   --cancelled-status: #e50000;
+   --header-action: #ff0644;
+   --created-by: #0038fc;
+   --send-button: #315bef;
+   --chatbox-header: #171929;
+   --notification-icon: #6d6d6d;
+   --button-action: #e84118;
+   --modal-header: #31d30c;
+   --form-color: #ff135d;
 }
