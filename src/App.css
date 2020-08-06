@@ -29,7 +29,6 @@ p {
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   background: var(--background-box);
    border-radius: 0 0 20px 20px;
 }
 

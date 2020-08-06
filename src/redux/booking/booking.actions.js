@@ -37,6 +37,7 @@ export const toggleSubmit = () => ({
     type: BookingActionTypes.TOGGLE_SUBMIT
 })
 
-export const clearBooking = () => ({
-    type: BookingActionTypes.CLEAR_BOOKING
+export const clearBooking = initTimeBookingId => ({
+    type: BookingActionTypes.CLEAR_BOOKING,
+    payload: initTimeBookingId
 })

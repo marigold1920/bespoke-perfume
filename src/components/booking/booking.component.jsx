@@ -31,10 +31,13 @@ class Booking extends React.Component {
       );
    };
 
-   handleOnClose = () => {
+   handleOnClose = async () => {
       if (this.props.isSubmit) {
+         const response = await bookingApi.get(`/timebookings/${new Date().toISOString().split("T")[0]}`);
          this.setState({ bookings: null });
-         this.props.clearBooking();
+         this.props.clearBooking(
+            response.status === 200 ? (response.data.length ? response.data[0].timeBookingId : 0) : 0
+         );
          this.props.toggleSubmit();
          this.initBooking();
       }
@@ -105,7 +108,7 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDistpatchToProps = dispatch => ({
    toggleModalCreate: () => dispatch(toggleModalCreate()),
-   clearBooking: () => dispatch(clearBooking()),
+   clearBooking: initTimeBookingId => dispatch(clearBooking(initTimeBookingId)),
    toggleSubmit: () => dispatch(toggleSubmit()),
 });
 

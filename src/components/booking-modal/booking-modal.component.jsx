@@ -78,7 +78,12 @@ class BookingModal extends React.Component {
                typePerfume: typePerfume,
             },
          })
-         .then(response => (response.status === 200 ? this.triggerElement.click() : null));
+         .then(response => {
+            if (response.status === 200) {
+               this.triggerElement.click();
+               this.handleDateChange(new Date().toISOString());
+            }
+         });
    };
 
    handleSearch = event => {
@@ -317,7 +322,6 @@ class BookingModal extends React.Component {
                   {toggleModal ? (
                      <div className="recommender">
                         <InputBox
-                           onInvalid={this.handleLeave}
                            onChange={this.handleSearch}
                            placeholder="Tên nước hoa..."
                            icon="fa fa-plus"

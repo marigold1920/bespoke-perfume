@@ -74,7 +74,7 @@ const bookingReducer = (state = INITIAL_STATE, action) => {
         case BookingActionTypes.CLEAR_BOOKING:
             return {
                 ...state,
-                booking: INITIAL_BOOKING
+                booking: { ...INITIAL_BOOKING, timeBookingId: action.payload },
             }
         default:
             return state;
