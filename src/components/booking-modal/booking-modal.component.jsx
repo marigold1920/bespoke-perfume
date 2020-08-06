@@ -91,17 +91,16 @@ class BookingModal extends React.Component {
       this.setState({ keySearch: value });
    };
 
-   handleDateChange = event => {
+   handleDateChange = async event => {
       this.props.changeSlotReload();
       this.props.changeBooking("dateBooking", new Date(event));
-      bookingApi.get(`/timebookings/${new Date(event).toISOString().split("T")[0]}`).then(response =>
-         this.setState(
-            {
-               slots: response.status === 200 ? response.data : [],
-            },
-            () => this.props.changeSlot(this.state.slots[0].timeBookingId)
-         )
-      );
+      const response = await bookingApi.get(`/timebookings/${new Date(event).toISOString().split("T")[0]}`);
+      if (response.status === 200) {
+         this.setState({
+            slots: response.data,
+         });
+         this.props.changeSlot(response.data.length ? response.data[0].timeBookingId : 0);
+      }
    };
 
    renderModalHeader = () => (
@@ -247,7 +246,7 @@ class BookingModal extends React.Component {
                         name="note"
                      ></textarea>
                   </div>
-                  {dateBooking && timeBookingId ? (
+                  {dateBooking ? (
                      <div className="time-booking">
                         <div className="date">
                            <label>Ngày hẹn</label>
@@ -259,53 +258,62 @@ class BookingModal extends React.Component {
                            />
                         </div>
                         {!isSlotReload ? (
-                           <div className="slot">
-                              <Dropdown
-                                 options={slots.map(slot =>
-                                    Object.defineProperties(
-                                       {},
-                                       {
-                                          id: {
-                                             value: slot.timeBookingId,
-                                          },
-                                          value: {
-                                             value: slot.timeStart,
-                                          },
+                           <div>
+                              {timeBookingId ? (
+                                 <div className="slot">
+                                    <Dropdown
+                                       options={slots.map(slot =>
+                                          Object.defineProperties(
+                                             {},
+                                             {
+                                                id: {
+                                                   value: slot.timeBookingId,
+                                                },
+                                                value: {
+                                                   value: slot.timeStart,
+                                                },
+                                             }
+                                          )
+                                       )}
+                                       name="timeBookingId"
+                                       display={
+                                          toggleModal
+                                             ? slots.find(slot => slot.timeBookingId === Number(timeBookingId))
+                                                  .timeStart
+                                             : timeStart
                                        }
-                                    )
-                                 )}
-                                 name="timeBookingId"
-                                 display={
-                                    toggleModal
-                                       ? slots.find(slot => slot.timeBookingId === Number(timeBookingId)).timeStart
-                                       : timeStart
-                                 }
-                                 handleChange={this.handleChange}
-                                 label="Giờ bắt đầu"
-                              />
-                              <Dropdown
-                                 options={slots.map(slot =>
-                                    Object.defineProperties(
-                                       {},
-                                       {
-                                          id: {
-                                             value: slot.timeBookingId,
-                                          },
-                                          value: {
-                                             value: slot.timeEnd,
-                                          },
+                                       handleChange={this.handleChange}
+                                       label="Giờ bắt đầu"
+                                    />
+                                    <Dropdown
+                                       options={slots.map(slot =>
+                                          Object.defineProperties(
+                                             {},
+                                             {
+                                                id: {
+                                                   value: slot.timeBookingId,
+                                                },
+                                                value: {
+                                                   value: slot.timeEnd,
+                                                },
+                                             }
+                                          )
+                                       )}
+                                       name="timeBookingId"
+                                       display={
+                                          toggleModal
+                                             ? slots.find(slot => slot.timeBookingId === Number(timeBookingId)).timeEnd
+                                             : timeEnd
                                        }
-                                    )
-                                 )}
-                                 name="timeBookingId"
-                                 display={
-                                    toggleModal
-                                       ? slots.find(slot => slot.timeBookingId === Number(timeBookingId)).timeEnd
-                                       : timeEnd
-                                 }
-                                 handleChange={this.handleChange}
-                                 label="Giờ kết thúc"
-                              />
+                                       handleChange={this.handleChange}
+                                       label="Giờ kết thúc"
+                                    />
+                                 </div>
+                              ) : (
+                                 <div className="empty-slot-message">
+                                    <p>Không tìm thấy thời gian thích hợp! Vui lòng chọn ngày khác!</p>
+                                 </div>
+                              )}
                            </div>
                         ) : (
                            <div className="loading">
